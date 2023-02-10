@@ -1,0 +1,61 @@
+{
+    "root": true,
+    "parserOptions": {
+        "ecmaVersion": 2021
+    },
+    "env": {
+        // "browser": true,
+        // "commonjs": true,
+        // "es2022": true,
+        "node": true
+    },
+    "extends": ["eslint:recommended", "airbnb-base"],
+    "rules": {
+        "indent": ["error", 4],
+        "max-len": [
+            "error",
+            {
+                "code": 130,
+                "ignoreTrailingComments": true,
+                "ignoreComments": true,
+                "ignoreUrls": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignoreRegExpLiterals": true
+            }
+        ],
+        "object-curly-newline": [
+            "error",
+            {
+                "ObjectExpression": { "multiline": true, "minProperties": 5, "consistent": true },
+                "ObjectPattern": { "multiline": true, "minProperties": 5, "consistent": true }
+            }
+        ],
+        "linebreak-style": ["error", "windows"],
+        "init-declarations": "off",
+        "no-console": "off",
+        "no-inline-comments": "off",
+        "consistent-return": "off",
+        "no-param-reassign": "off",
+        "no-underscore-dangle": "off"
+    },
+    "overrides": [
+        {
+            "files": ["test/**/*.js"],
+            "env": {
+                "mocha": true,
+                "chai-expect": true,
+                "sinon": true,
+                "faker": true
+            },
+            "plugins": ["mocha", "chai-expect", "sinon", "faker"]
+        }
+    ]
+    // "overrides": [
+    //     {
+    //         "files": ["test/**"],
+    //         "plugins": ["jest"]
+    //     }
+    // ],
+}
+
